@@ -7,7 +7,7 @@ import express from 'express';
 import 'express-async-errors';
 import helmet from 'helmet';
 import path from 'path';
-import db from './db/db';
+import getDb from './db/db';
 import errorLogger from './middleware/error-logger';
 import authRoutes from './routes/auth-routes';
 const app = express();
@@ -23,7 +23,10 @@ app.use(
 app.use('/auth', authRoutes);
 
 app.get('/', async (req, res) => {
+  const db = getDb();
+  console.log(db);
   const collection = await db?.collection('test');
+  console.log(collection);
   const result = await collection?.find({}).limit(20).toArray();
   console.log(result);
   res.status(200).json({
