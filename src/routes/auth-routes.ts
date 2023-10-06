@@ -1,20 +1,12 @@
 import { Router } from 'express';
-import {
-  addCar,
-  deleteCar,
-  deleteCars,
-  getCar,
-  getCars,
-  updateCar,
-} from '../controllers/cars-controller';
 
-const authRoutes = Router();
+const AuthRoutes = Router();
 
-authRoutes.get('/cars', getCars);
-authRoutes.get('/car/:carId', getCar);
-authRoutes.post('/car/:carId', addCar);
-authRoutes.patch('/car/:carId', updateCar);
-authRoutes.delete('/car/:carId', deleteCar);
-authRoutes.delete('/cars', deleteCars);
+// AuthRoutes.get('/cars', getCars);
+// AuthRoutes.get('/car/:carId', getCar);
+// AuthRoutes.post('/car/:carId', addCar);
+// AuthRoutes.patch('/car/:carId', updateCar);
+// AuthRoutes.delete('/car/:carId', deleteCar);
+// AuthRoutes.delete('/cars', deleteCars);
 
-export default authRoutes;
+export default AuthRoutes;

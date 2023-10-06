@@ -1,17 +1,14 @@
-import { Db, MongoClient } from 'mongodb';
+import mongoose from 'mongoose';
 
-let db: null | Db = null;
-const connectToDb = async () => {
+const connectToDb = () => {
   try {
-    const client = await MongoClient.connect(
-      process.env.DB_CONNECTION_STRING ?? ''
-    );
-    db = client.db();
-    console.log('connected to db🗄️');
+    if (!process.env.DB_CONNECTION_STRING)
+      throw new Error('Connection string could not be found!');
+    return mongoose.connect(process.env.DB_CONNECTION_STRING);
   } catch (e) {
-    console.log('Database Connection Error!', e);
+    console.log('Connect DB Error = ', e);
+    process.exit(1);
   }
 };
 
-connectToDb();
-export default () => db;
+export default connectToDb;

@@ -1,19 +1,15 @@
 import { Request, Response } from 'express';
+import responseHandler from '../utils/response-handler';
 
 export const getCars = (req: Request, res: Response) => {
   // get multiple car
-  res.json({
-    success: true,
-    data: 'you will receive the cars data here',
-  });
+
+  res.json(responseHandler('all cars data'));
 };
 
 export const getCar = (req: Request, res: Response) => {
   // get a single car
-  res.json({
-    success: true,
-    data: 'you will receive the cars data here',
-  });
+  res.json(responseHandler('get specific car data'));
 };
 
 export const addCar = (req: Request, res: Response) => {};
