@@ -1,0 +1,1338 @@
+{
+	"info": {
+		"_postman_id": "3cbc57e7-a81f-4d33-9a1c-dea27dedae21",
+		"name": "Cars Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18753554"
+	},
+	"item": [
+		{
+			"name": "Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"first_name\": \"Mahendrasingh\" ,\r\n\"last_name\": \"Dhoni\" ,\r\n\"email\": \"msdhoni@csk.com\",\r\n\"password\": \"Pass@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{CARS_BASE_URL}}/register",
+					"host": [
+						"{{CARS_BASE_URL}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Registration",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"first_name\": \"Mahendrasingh\" ,\r\n\"last_name\": \"Dhoni\" ,\r\n\"email\": \"msdhoni@csk.com\",\r\n\"password\": \"Pass@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CARS_BASE_URL}}/register",
+							"host": [
+								"{{CARS_BASE_URL}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "78"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4e-Gn0kPxAwVzQjdKnsBQKoYyNthLw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 07 Oct 2023 10:31:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": \"6521336a1e370011a2e79127\",\n    \"isSuccess\": true,\n    \"message\": \"\",\n    \"error\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const res = pm.response.json()\r",
+							"pm.collectionVariables.set(\"CARS_TOKEN\", res.data);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"email\": \"techiabhil@gmail.com\",\r\n\"password\": \"Pass@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{CARS_BASE_URL}}/login",
+					"host": [
+						"{{CARS_BASE_URL}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\": \"techiabhil@gmail.com\",\r\n\"password\": \"Pass@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CARS_BASE_URL}}/login",
+							"host": [
+								"{{CARS_BASE_URL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "389"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"185-J7f8BRVDy+5Lq5FzwJl2IuzWFJA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 07 Oct 2023 10:30:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjUyMDVjZWNjNzhlNjA2YjZiYjZhNmRiIiwiZmlyc3RfbmFtZSI6IkFiaGlhbHNoIiwibGFzdF9uYW1lIjoiVmlyYXQiLCJlbWFpbCI6InRlY2hpYWJoaWxAZ21haWwuY29tIiwicm9sZSI6IlVzZXIiLCJmdWxsX25hbWUiOiJBYmhpYWxzaCBWaXJhdCIsImlhdCI6MTY5NjY3NDYzOCwiZXhwIjoxNjk3NTM4NjM4fQ.xPrGTY7o1dptRhC1HmlBvjbZm4RD4AcbuvCZI8esMgE\",\n    \"isSuccess\": true,\n    \"message\": \"\",\n    \"error\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Cars",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{CARS_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n            \"name\": \"Hyundai Verna\",\r\n            \"min_price\": 750000,\r\n            \"max_price\": 1200000,\r\n            \"fuel_type\": [\r\n                \"Petrol\", \"Disel\", \"Electric\", \"CNG\"\r\n            ],\r\n            \"transmission\": \"Both\",\r\n            \"body_type\": \"Sedan\",\r\n            \"images\": []\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{CARS_BASE_URL}}/auth/car",
+					"host": [
+						"{{CARS_BASE_URL}}"
+					],
+					"path": [
+						"auth",
+						"car"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Cars",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\r\n            \"name\": \"Tata Punch\",\r\n            \"min_price\": 850000,\r\n            \"max_price\": 1300000,\r\n            \"fuel_type\": [\r\n                \"Petrol\", \"Disel\", \"CNG\"\r\n            ],\r\n            \"transmission\": \"Both\",\r\n            \"body_type\": \"SUV\",\r\n            \"images\": []\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CARS_BASE_URL}}/auth/car",
+							"host": [
+								"{{CARS_BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"car"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "78"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4e-9YQlCVK9mbuZRBPTj4GQJYviCo4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 07 Oct 2023 10:23:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": \"6521318b1e370011a2e79121\",\n    \"isSuccess\": true,\n    \"message\": \"\",\n    \"error\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Car Details",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{CARS_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n                  \"name\": \"Hyundai Verna\",\r\n            \"min_price\": 1200000,\r\n            \"max_price\": 2000000,\r\n            \"fuel_type\": [\r\n                \"Petrol\",\r\n                \"Disel\",\r\n                \"Electric\"\r\n            ],\r\n            \"transmission\": \"Both\",\r\n            \"body_type\": \"Sedan\",\r\n            \"images\": []\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{CARS_BASE_URL}}/auth/car/6521418b72cd9e4cf8d76725",
+					"host": [
+						"{{CARS_BASE_URL}}"
+					],
+					"path": [
+						"auth",
+						"car",
+						"6521418b72cd9e4cf8d76725"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Cars Copy",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\r\n            \"name\": \"Maruti Suzuki ALTO\",\r\n            \"min_price\": 400000,\r\n            \"max_price\": 800000,\r\n            \"fuel_type\": [\r\n                \"Petrol\"\r\n            ],\r\n            \"transmission\": \"Both\",\r\n            \"body_type\": \"Hatchback\",\r\n            \"images\": []\r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CARS_BASE_URL}}/auth/car/6521240e1977ce65c3aba5c5",
+							"host": [
+								"{{CARS_BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"car",
+								"6521240e1977ce65c3aba5c5"
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "131"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"83-g6GCwc9jiCAQ7ga5FZo/txrusUk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 07 Oct 2023 10:19:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": null,\n    \"isSuccess\": false,\n    \"message\": \"Validation failed.\",\n    \"error\": [\n        \"min_price Number must be greater than or equal to 300000\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "delete car by id",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{CARS_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{CARS_BASE_URL}}/auth/car/6521413b72cd9e4cf8d7671e",
+					"host": [
+						"{{CARS_BASE_URL}}"
+					],
+					"path": [
+						"auth",
+						"car",
+						"6521413b72cd9e4cf8d7671e"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Car Details Copy",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{CARS_BASE_URL}}/auth/car/6521250846d25d2d0ffa8ec8",
+							"host": [
+								"{{CARS_BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"car",
+								"6521250846d25d2d0ffa8ec8"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "96"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"60-V6eh3mrRLFyp7tyVRAoUK0jmjo4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 07 Oct 2023 10:21:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": \"Car details has been successfully removed.\",\n    \"isSuccess\": true,\n    \"message\": \"\",\n    \"error\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "delete call cars by users",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{CARS_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{CARS_BASE_URL}}/auth/cars",
+					"host": [
+						"{{CARS_BASE_URL}}"
+					],
+					"path": [
+						"auth",
+						"cars"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "delete car by id Copy",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{CARS_BASE_URL}}/auth/cars",
+							"host": [
+								"{{CARS_BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"cars"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "104"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"68-X/iQIE1P7CY7hgC5WqfiAq2t7I8\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 07 Oct 2023 11:27:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": \"All the Car details has been successfully removed.\",\n    \"isSuccess\": true,\n    \"message\": \"\",\n    \"error\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Get user added cars",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{CARS_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{CARS_BASE_URL}}/auth/user/cars",
+					"host": [
+						"{{CARS_BASE_URL}}"
+					],
+					"path": [
+						"auth",
+						"user",
+						"cars"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Cars Copy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CARS_BASE_URL}}/auth/user/cars",
+							"host": [
+								"{{CARS_BASE_URL}}"
+							],
+							"path": [
+								"auth",
+								"user",
+								"cars"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "512"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"200-9bG81c4uG5Ss9K9lXAfDmhApzqg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 07 Oct 2023 10:10:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"_id\": \"6521240e1977ce65c3aba5c5\",\n            \"name\": \"Maruti ALTO\",\n            \"min_price\": 400000,\n            \"max_price\": 800000,\n            \"fuel_type\": [\n                \"Petrol\"\n            ],\n            \"transmission\": \"Both\",\n            \"body_type\": \"Hatchback\",\n            \"images\": [],\n            \"added_by\": \"65205cecc78e606b6bb6a6db\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6521250846d25d2d0ffa8ec8\",\n            \"name\": \"Tata Tiago\",\n            \"min_price\": 600000,\n            \"max_price\": 1200000,\n            \"fuel_type\": [\n                \"Petrol\",\n                \"CNG\",\n                \"Electric\"\n            ],\n            \"transmission\": \"Both\",\n            \"body_type\": \"Hatchback\",\n            \"images\": [],\n            \"added_by\": \"65205cecc78e606b6bb6a6db\",\n            \"__v\": 0\n        }\n    ],\n    \"isSuccess\": true,\n    \"message\": \"\",\n    \"error\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Gall all the cars",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{CARS_BASE_URL}}/cars",
+					"host": [
+						"{{CARS_BASE_URL}}"
+					],
+					"path": [
+						"cars"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Gall all the cars",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CARS_BASE_URL}}/cars",
+							"host": [
+								"{{CARS_BASE_URL}}"
+							],
+							"path": [
+								"cars"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "516"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"204-OEthM9shw1vvhSNTgDR+RHZMtW8\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 07 Oct 2023 10:23:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"_id\": \"6521315f1e370011a2e7911f\",\n            \"name\": \"Maruti ALTO\",\n            \"min_price\": 450000,\n            \"max_price\": 800000,\n            \"fuel_type\": [\n                \"Petrol\"\n            ],\n            \"transmission\": \"Manual\",\n            \"body_type\": \"Hatchback\",\n            \"images\": [],\n            \"added_by\": \"65205cecc78e606b6bb6a6db\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6521318b1e370011a2e79121\",\n            \"name\": \"Tata Tiago\",\n            \"min_price\": 750000,\n            \"max_price\": 1200000,\n            \"fuel_type\": [\n                \"Petrol\",\n                \"Disel\",\n                \"Electric\"\n            ],\n            \"transmission\": \"Both\",\n            \"body_type\": \"Hatchback\",\n            \"images\": [],\n            \"added_by\": \"65205cecc78e606b6bb6a6db\",\n            \"__v\": 0\n        }\n    ],\n    \"isSuccess\": true,\n    \"message\": \"\",\n    \"error\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Get car by id",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{CARS_BASE_URL}}/car/65214640418abde6e9a199c1",
+					"host": [
+						"{{CARS_BASE_URL}}"
+					],
+					"path": [
+						"car",
+						"65214640418abde6e9a199c1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Gall car by id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CARS_BASE_URL}}/car/6521240e1977ce65c3aba5c5",
+							"host": [
+								"{{CARS_BASE_URL}}"
+							],
+							"path": [
+								"car",
+								"6521240e1977ce65c3aba5c5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Resource-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Origin-Agent-Cluster",
+							"value": "?1"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "56"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"38-blWmD6+btzbZUBnOl8KyzhQ3/ps\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 07 Oct 2023 10:30:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": null,\n    \"isSuccess\": true,\n    \"message\": \"\",\n    \"error\": null\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "CARS_TOKEN",
+			"value": ""
+		},
+		{
+			"key": "CARS_BASE_URL",
+			"value": "http://localhost:4000/api/v1",
+			"type": "string"
+		}
+	]
+}
