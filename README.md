@@ -25,7 +25,7 @@ I've utilized 'pnpm' for package installation; however, feel free to use yarn or
 pnpm i
 ```
 
-- starting project in devlopment mode
+- starting project in devlopment mode, before starting the app make sure the mongodb server is running on 27017(In case of any other port you can specify the port in .env file)
 
 ```bash
 pnpm start
@@ -36,3 +36,7 @@ pnpm start
 ```
 pnpm build
 ```
+
+## Postman Collection
+
+This app contains postman collection which you can directly import into postman & test the request
