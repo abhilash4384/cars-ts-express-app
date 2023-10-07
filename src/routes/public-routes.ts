@@ -20,6 +20,6 @@ PublicRoutes.post(
 );
 PublicRoutes.post('/login', validationHandler(requestLoginSchema), getUser);
 PublicRoutes.get('/cars', getCars);
-PublicRoutes.get('/cars/:carId', getCar);
+PublicRoutes.get('/car/:carId', getCar);
 
 export default PublicRoutes;

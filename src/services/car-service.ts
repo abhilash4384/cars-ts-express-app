@@ -1,4 +1,4 @@
-import Car, { ICar } from '../models/cars.schema';
+import Car from '../models/cars.schema';
 
 export const getAllCars = async () => {
   return await Car.find();
@@ -11,15 +11,20 @@ export const getAllCarsByUserId = async (user_id: string) => {
 };
 
 export const getCarAndUserDetailsByCarId = async (car_id: string) => {
-  return await Car.findById(car_id).populate('User');
+  const car = await Car.findById(car_id);
+  console.log('and the car is = ', JSON.stringify(car));
+  return car;
 };
 
-export const addNewCar = async (payload: ICar) => {
+export const addNewCar = async (payload: any) => {
   return await Car.create(payload);
 };
 
-export const updateCarDetails = async (car_id: string, payload: ICar) => {
-  return await Car.findByIdAndUpdate(car_id, payload);
+export const updateCarDetails = async (car_id: string, payload: any) => {
+  return await Car.findByIdAndUpdate(car_id, payload, {
+    runValidators: true,
+    new: true,
+  });
 };
 
 export const deleteCarById = async (car_id: string, user_id: string) => {

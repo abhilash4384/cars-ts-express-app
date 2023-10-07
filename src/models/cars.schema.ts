@@ -1,4 +1,4 @@
-import mongoose, { InferSchemaType } from 'mongoose';
+import mongoose from 'mongoose';
 
 const CarSchema = new mongoose.Schema({
   name: {
@@ -46,5 +46,4 @@ const CarSchema = new mongoose.Schema({
 });
 
 const Car = mongoose.model('Car', CarSchema);
-export type ICar = InferSchemaType<typeof CarSchema>;
 export default Car;
