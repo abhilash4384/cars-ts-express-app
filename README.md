@@ -17,7 +17,7 @@ The Cars App is an API project that addresses a common scenario I encounter when
 
 ## Scripts
 
-I've utilized 'pnpm' for package installation; however, feel free to use yarn if it's your preferred choice. Simply replace the 'pnpm' keyword in all the commands with 'yarn'.
+I've utilized 'pnpm' for package installation; however, feel free to use yarn or npm if it's your preferred choice. Simply replace the 'pnpm' keyword in all the commands with 'yarn' or 'npm'.
 
 - required packages installation
 
