@@ -11,7 +11,10 @@ export const getAllCarsByUserId = async (user_id: string) => {
 };
 
 export const getCarAndUserDetailsByCarId = async (car_id: string) => {
-  const car = await Car.findById(car_id);
+  const car = await Car.findById(car_id).populate(
+    'added_by',
+    'first_name last_name'
+  );
   console.log('and the car is = ', JSON.stringify(car));
   return car;
 };
