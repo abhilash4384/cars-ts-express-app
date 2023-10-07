@@ -1,4 +1,13 @@
 const { z } = require('zod');
-const EMAIL_VALIDATOR = z.string().email();
+const schema = z.object({
+  name: z.string(),
+});
 
-console.log(EMAIL_VALIDATOR.safeParse('sam@willson.com').success);
+const test = {
+  name: false,
+  lastName: 'virat',
+};
+
+const parsed = schema.safeParse(test);
+
+console.log(parsed);

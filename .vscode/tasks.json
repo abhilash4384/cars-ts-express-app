@@ -6,17 +6,17 @@
       "tsconfig": "tsconfig.json",
       "option": "watch",
       "problemMatcher": ["$tsc-watch"],
-      "group": "build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
       "label": "tsc: watch - tsconfig.json"
     },
     {
       "type": "typescript",
       "tsconfig": "tsconfig.json",
       "problemMatcher": ["$tsc"],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
+      "group": "build",
       "label": "tsc: build - tsconfig.json"
     }
   ]

@@ -42,10 +42,20 @@ UserSchema.pre('save', async function () {
   this.password = await bcrypt.hash(this.password, salt);
 });
 
-UserSchema.methods.comparePassword = async function (userPassword: string) {
-  return await bcrypt.compare(userPassword, this.password);
+/**
+ *  way 1 to add method on the schema
+ */
+UserSchema.methods.fullName = function fullName(): string {
+  return `${this.first_name} ${this.last_name}`;
 };
 
-const User = mongoose.model('User', UserSchema);
+/**
+ * way 2 to add the methods on the schema
+ */
 
+UserSchema.method('comparePassword', async function (userPassword: string) {
+  return await bcrypt.compare(userPassword, this.password);
+});
+
+const User = mongoose.model('User', UserSchema);
 export default User;

@@ -1,5 +1,10 @@
 import { Router } from 'express';
-import { createUser, getUser } from '../controllers/auth-controller';
+import {
+  createUser,
+  getCar,
+  getCars,
+  getUser,
+} from '../controllers/public-controller';
 import validationHandler from '../middleware/validation';
 import {
   requestLoginSchema,
@@ -14,5 +19,7 @@ PublicRoutes.post(
   createUser
 );
 PublicRoutes.post('/login', validationHandler(requestLoginSchema), getUser);
+PublicRoutes.get('/cars', getCars);
+PublicRoutes.get('/cars/:carId', getCar);
 
 export default PublicRoutes;

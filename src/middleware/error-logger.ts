@@ -22,7 +22,7 @@ export default function (
   const currentDate = new Date().toString();
   const stars = '*'.repeat(10);
   fs.appendFile(
-    `../../logs/${fileName}`,
+    `./logs/${fileName}`,
     `\n${stars} Start Log: ${currentDate} ${stars}\n ${errorTxt} \n`,
     (fileError) => {
       if (fileError) console.log('Error while writing logs ');

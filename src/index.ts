@@ -3,7 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 dotenv.config();
 //this is a necessary comment as we want the env config to be setup first
-import express from 'express';
+import express, { Request, Response } from 'express';
 import 'express-async-errors';
 import helmet from 'helmet';
 import path from 'path';
@@ -12,7 +12,16 @@ import AuthMiddleware from './middleware/authentication';
 import errorLogger from './middleware/error-logger';
 import AuthRoutes from './routes/auth-routes';
 import PublicRoutes from './routes/public-routes';
+import { IJWT } from './types/common.types';
 import responseHandler from './utils/response-handler';
+
+declare global {
+  namespace Express {
+    interface Request {
+      user: IJWT | undefined;
+    }
+  }
+}
 const app = express();
 
 app.use(cors());
@@ -26,7 +35,7 @@ app.use(
 app.use('/api/v1', PublicRoutes);
 app.use('/api/v1/auth', AuthMiddleware, AuthRoutes);
 
-app.get('/', async (req, res) => {
+app.get('/', async (req: Request, res: Response) => {
   res
     .status(200)
     .json(
@@ -34,7 +43,7 @@ app.get('/', async (req, res) => {
     );
 });
 
-app.use((_, res) => {
+app.use((_: Request, res: Response) => {
   res.status(404).json(responseHandler(null, false, 'Resource not found!'));
 });
 
@@ -42,7 +51,9 @@ app.use(errorLogger);
 
 const start = async () => {
   try {
+    console.log('Connecting to DB...');
     await connectToDb();
+    console.log('DB Connection Established...');
 
     const PORT = process.env.PORT ?? 4001;
     app.listen(PORT, () => {
@@ -52,5 +63,4 @@ const start = async () => {
     console.log('Error while starting the app = ', e);
   }
 };
-
 start();

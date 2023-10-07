@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose, { InferSchemaType } from 'mongoose';
 
 const CarSchema = new mongoose.Schema({
   name: {
@@ -23,6 +23,16 @@ const CarSchema = new mongoose.Schema({
       required: true,
     },
   ],
+  transmission: {
+    type: String,
+    enum: ['Manual', 'Automatic', 'Both'],
+    required: true,
+  },
+  body_type: {
+    type: String,
+    enum: ['SUV', 'Hatchback', 'Sedan'],
+    required: true,
+  },
   images: [
     {
       type: String,
@@ -35,4 +45,6 @@ const CarSchema = new mongoose.Schema({
   },
 });
 
-export default mongoose.model('Car', CarSchema);
+const Car = mongoose.model('Car', CarSchema);
+export type ICar = InferSchemaType<typeof CarSchema>;
+export default Car;
