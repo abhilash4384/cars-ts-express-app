@@ -15,6 +15,7 @@ The Cars App is an API project that addresses a common scenario I encounter when
 - MongoDB using Mongoose
 - Typescript
 - Zod validations
+- Multer (Image upload)
 
 ## Scripts
 
