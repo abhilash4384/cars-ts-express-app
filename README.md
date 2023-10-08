@@ -14,6 +14,7 @@ The Cars App is an API project that addresses a common scenario I encounter when
 - ExpressJS
 - MongoDB using Mongoose
 - Typescript
+- Zod 
 
 ## Scripts
 
@@ -39,4 +40,4 @@ pnpm build
 
 ## Postman Collection
 
-This app contains postman collection which you can directly import into postman & test the request
+This app contains postman(ref postman dir) collection which you can directly import into postman & test the request
