@@ -14,7 +14,7 @@ The Cars App is an API project that addresses a common scenario I encounter when
 - ExpressJS
 - MongoDB using Mongoose
 - Typescript
-- Zod 
+- Zod validations
 
 ## Scripts
 
@@ -34,8 +34,14 @@ pnpm start
 
 - production build
 
-```
+```bash
 pnpm build
+```
+
+- Setting up debugger (optional), install below dependecies. In case of any issues check the .vscode/launch.json file and you can also refer <a href="https://www.youtube.com/watch?v=f3i9b3uK00U&ab_channel=RobertsDevTalk" target="_blank">this</a> video.
+
+```bash
+pnpm add -D ts-node tsconfig-paths
 ```
 
 ## Postman Collection
